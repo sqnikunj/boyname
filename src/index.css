@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Liquid Glass Theme Styles */
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl;
+  }
+  
+  .glass-card-strong {
+    @apply backdrop-blur-2xl bg-white/15 border border-white/30 shadow-2xl;
+  }
+  
+  .glass-button {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .glass-input {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 placeholder-white/60 text-white focus:bg-white/15 focus:border-white/40 focus:ring-2 focus:ring-white/30;
+  }
+  
+  .glass-stats {
+    @apply backdrop-blur-2xl bg-gradient-to-r from-white/15 to-white/10 border border-white/30;
+  }
+  
+  .glass-header {
+    @apply backdrop-blur-2xl bg-white/10 border-b border-white/20;
+  }
+  
+  .glass-footer {
+    @apply backdrop-blur-xl bg-white/5 border-t border-white/10;
+  }
+  
+  .liquid-gradient {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.1) 0%, 
+      rgba(255, 255, 255, 0.05) 50%, 
+      rgba(255, 255, 255, 0.1) 100%);
+  }
+  
+  .liquid-border {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .floating-animation-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+/* Custom scrollbar for glass theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
